@@ -22,15 +22,21 @@ class ShowPost extends Component {
     }
 
     render() {
+      let formStyle={
+    'height': '150px',
+    'padding':' 20px',
+    'color': '#93b5ea',
+    'text-align': 'center',
+    'margin': '0 auto'
+  }
         return (
 
             <div className="container">
                 <div className="col-lg-5  mx-auto">
-                    <div className="col-lg-8 ">
-                    <h1>Buddy, get babel</h1>
-                        <h1 className="post-title">{this.state.post.blogTitle}</h1>
-                        <h3 className="post-meta">Posted by {this.state.post.authorName}</h3>
-                        <p className="post-subtitle">{this.state.post.blogEntry}</p>
+                    <div className="col-lg-8 " style={formStyle}>
+                        <h2 className="title">Title: {this.state.post.blogTitle}</h2>
+                        <h3 className="meta">Posted by: {this.state.post.authorName}</h3>
+                        <p className="subtitle"> Post: {this.state.post.blogEntry}</p>
                     </div>
                 </div>
             </div>

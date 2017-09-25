@@ -25,7 +25,7 @@ handleChange = e => {
           blogTitle: e.target.value,
           blogEntry: e.target.value,
         });
-
+        this.props.history.push('/postlist');
         let listItem = JSON.stringify(this.state);
 
         fetch("https://tiny-lasagna-server.herokuapp.com/collections/blogger/", {
@@ -45,9 +45,16 @@ handleChange = e => {
       this.setState({authorName: '',blogTitle: '', blogEntry:''});
     }
     render(){
+      let formStyle={
+    'height': '150px',
+    'padding':' 20px',
+    'color': '#93b5ea',
+    'text-align': 'center',
+    'margin': '0 auto'
+  }
     return (
       <div>
-      <form className="form" onSubmit={this.addToList}>
+      <form className="form" style={formStyle} onSubmit={this.addToList}>
       <label className="formlabel"> Author Name: </label>
       <br></br>
        <input className="forminput" type='text' id = "authorName" value={this.state.authorName} onChange={this.handleChange}></input>

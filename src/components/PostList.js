@@ -15,20 +15,24 @@ class PostList extends Component {
         })
     }
     render() {
+      let formStyle={
+    'height': '150px',
+    'padding':' 20px',
+    'color': '#93b5ea',
+    'text-align': 'left',
+    'margin': '0 auto',
+  }
         let posts = this.state.posts.map((post, index) => {
             return (
                 <div className="post-preview" key={index}>
-                    <h2 className="post-title"><Link to={`/showpost/${post._id}`}>{post.blogTitle}</Link> </h2>
-                    <p className="post-subtitle">{post.blogEntry}</p>
-                    <p className="post-meta">Posted by {post.authorName}</p>
-                    <hr />
-                </div>
+                    <h2 className="post-title"><Link to={`/showpost/${post._id}`} style={{textDecoration:'none', color: '#93b5ea'}}>Blog Title: {post.blogTitle}</Link> </h2>
+                  </div>
             )
         })
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-8 col-md-10 mx-auto">
+                    <div className="col-lg-8 col-md-10 mx-auto" style={formStyle}>
                         {posts}
                     </div>
                 </div>
